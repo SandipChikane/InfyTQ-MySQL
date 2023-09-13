@@ -13,3 +13,46 @@ Collaborative assignments-3
 
 ALTER TABLE Shopper MODIFY MobileNo VARCHAR(15);
 
+Assignment No - 1
+
+CREATE TABLE Article(
+  ArCode CHAR(5) PRIMARY KEY,
+  CHECK(ArCode LIKE 'A%'),
+  ArName VARCHAR2(30) NOT NULL,
+  Rate NUMBER(8,2),
+  Quantity NUMBER(4) DEFAULT 0,
+  CHECK(Quantity >=0),
+  Class CHAR(1) CHECK(Class IN('A', 'B', 'C'))
+)
+
+
+Assignment No - 5 : Mandatory
+CREATE TABLE Store(
+    Name VARCHAR2(20) PRIMARY KEY,
+    Location VARCHAR(30) NOT NULL,
+    ManagerName VARCHAR2(30) UNIQUE
+);
+
+Assignment No - 6 : Mandatory
+ALTER TABLE Store RENAME COLUMN Name to StoreName;
+
+
+Assignment No - 7 : Mandatory
+CREATE TABLE Bill(
+    BillNo NUMBER PRIMARY KEY,
+    StoreName VARCHAR2(20) REFERENCES Store(StoreName),
+    Shopperid NUMBER REFERENCES Shopper(Shopperid),
+    ArCode CHAR(5) REFERENCES Article(ArCode),
+    Amount NUMBER,
+    BillDate DATE,
+    Quantity NUMBER(4) DEFAULT 1 CHECK( Quantity> 0)
+);
+
+Assignment No - 8 : Mandatory
+
+CREATE TABLE Supplier(
+    Supplierid VARCHAR2(6) PRIMARY KEY,
+    Name VARCHAR2(30),
+    ContactNo VARCHAR2(15) NOT NULL,
+    Emailid VARCHAR2(30)
+);
