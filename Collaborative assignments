@@ -1,0 +1,15 @@
+Collaborative assignments-2
+
+CREATE TABLE Shopper(
+    Shopperid NUMBER PRIMARY KEY,
+    ShopperName VARCHAR2(20) NOT NULL,
+    Gender CHAR(6) CHECK (Gender IN('Male','Female')),
+    MobileNo NUMBER NOT NULL,
+    Address VARCHAR2(50)
+);
+
+
+Collaborative assignments-3
+
+ALTER TABLE Shopper MODIFY MobileNo VARCHAR(15);
+
