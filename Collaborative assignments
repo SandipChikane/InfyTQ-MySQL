@@ -56,3 +56,113 @@ CREATE TABLE Supplier(
     ContactNo VARCHAR2(15) NOT NULL,
     Emailid VARCHAR2(30)
 );
+
+
+Assignment No - 9 : Mandatory
+ALTER TABLE Supplier ADD City VARCHAR2(10);
+
+
+Assignment No - 10 : Mandatory
+ALTER TABLE Supplier DROP (Emailid);
+
+
+Assignment No - 11 : Mandatory
+CREATE TABLE City(
+    City VARCHAR2(20) UNIQUE
+);
+
+
+Assignment No - 12 : Mandatory
+ALTER TABLE City DROP(City);
+
+
+Assignment No - 13 : Mandatory
+CREATE TABLE Address(
+    HouseNo NUMBER,
+    Street VARCHAR2(30),
+    city VARCHAR2(20) REFERENCES City(City),
+    zip NUMBER(6) CHECK( zip >=0),
+    state VARCHAR2(5),
+    PRIMARY KEY(HouseNo,Street,city)
+);
+
+
+Assignment No - 14 : Mandatory
+ALTER TABLE Address MODIFY state VARCHAR2(20);
+
+
+Collaborative Assignment 15
+INSERT INTO Shopper
+(ShopperId, ShopperName, Gender, MobileNo, Address) 
+VALUES 
+(101, 'Mark Jane', 'Male', 1234567890, 'Allen Street, New York')
+
+
+Assignment 2 
+INSERT INTO Article VALUES('A1001','Mouse',500,0,'C');
+
+
+Assignment  - 17 : Mandatory
+
+
+Assignment  - 18 : Mandatory
+
+
+Assignment  - 19 : Mandatory
+INSERT INTO Supplier VALUES('S501','Avaya Ltd',9012345678,'Mysore');
+
+
+Assignment 3
+SELECT DESCR, PRICE FROM ITEM WHERE DESCR LIKE '%Hard disk%'
+
+Assignment 4 
+SELECT quotationid, sname, itemcode, quotedprice, qdate, qstatus FROM Quotation WHERE qstatus ='Rejected' or qstatus = 'Closed'
+
+
+Assignment 5
+SELECT designation,salary from empdetails WHERE designation ='Manager' or designation ='Billing Staff'
+
+
+Assignment 6
+SELECT roid,location FROM Retailoutlet WHERE Managerid IS NULL;
+
+
+Assignment 7
+SELECT orderid,quotationid,status FROM orders WHERE orderdate BETWEEN'1-Dec-2014'and '1-Jan-2015';
+
+
+Assignment 25 : Mandatory
+SELECT itemcode,descr,price FROM item WHERE category = 'B' and descr like '%Shirt%' or descr like '%Skirt%' 
+
+
+Assignment 26 : Mandatory
+SELECT DISTINCT designation,salary FROM empdetails;
+
+Assignment 26 : Mandatory
+
+
+Assignment 27 : Mandatory
+SELECT itemcode,descr,price FROM item;
+
+
+Assignment 26 : Mandatory
+
+
+
+Assignment 26 : Mandatory
+
+
+
+Assignment 26 : Mandatory
+
+
+
+Assignment 26 : Mandatory
+
+
+
+Assignment 26 : Mandatory
+
+
+
+Assignment 26 : Mandatory
